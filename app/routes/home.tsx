@@ -4,8 +4,6 @@ import { LatestFromKotlinSection } from "../components/sections/LatestFromKotlin
 import { UsageSection } from "~/components/sections/UsageSection";
 import { StartSection } from "~/components/sections/StartSection";
 import { ThemeProvider } from "@rescui/ui-contexts";
-import Footer from "~/components/Footer";
-// import Header from "~/components/Header";
 import "../styles/Home.scss"
 
 export function meta() {
@@ -15,6 +13,9 @@ export function meta() {
   ];
 }
 
+//BUGS
+//kotlin usage highlights section's card have wrong css
+//wrong fonts on some places
 export default function Home() {
   
   return <div className="global-layout">
@@ -29,6 +30,5 @@ export default function Home() {
       </div>
     </ThemeProvider>
 
-    {/* <Footer/> */}
   </div>;
 }

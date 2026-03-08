@@ -45,7 +45,7 @@ export function HeaderSection() {
 
                 <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
                     {visibleCards.map(card => (
-                        <HeaderSectionCard card={card}/>
+                        <HeaderSectionCard card={card} key={card.id}/>
                     ))}
                 </div>
 

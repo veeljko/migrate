@@ -9,11 +9,10 @@ import { tabs } from "../data/programmingLanguageData";
 import "../styles/ProgrammingLanguage.scss";
 import { useHighlight } from "../hooks/useHighlight";
 
-const initialIndex = Math.floor(Math.random() * tabs.length);
 
 export function ProgrammingLanguage() {
   const textCn = useTextStyles();
-  const {highlighted, activeIndex, setActiveIndex} = useHighlight(initialIndex);
+  const { highlighted, activeIndex, setActiveIndex } = useHighlight();
 
   return (
     <div className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
@@ -34,7 +33,7 @@ export function ProgrammingLanguage() {
       </div>
 
       <div className="kto-col-8 kto-col-md-12">
-        <TabList value={activeIndex} onChange={(v : number) => setActiveIndex(v)}>
+        <TabList value={activeIndex} onChange={(v: number) => setActiveIndex(v)}>
           {tabs.map((tab, i) => (
             <Tab key={i}>{tab.title}</Tab>
           ))}

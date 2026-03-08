@@ -9,34 +9,16 @@ import { Container, Section } from "../../layouts/PromeniIme";
 import { testimonials } from "../../data/testimonials";
 
 import "../../styles/sections/Usage.scss";
+import { useSortToggle } from "~/hooks/useSortToggle";
 
 function UsageSectionContent() {
   const textCn = useTextStyles();
 
-  const [sortByName, setSortByName] = useState(false);
-
-  useEffect(() => {
-    const savedOrder = localStorage.getItem("kotlin-testimonials-order");
-    if (savedOrder === "name") {
-      setSortByName(true);
-    }
-  }, []);
-
-  const sortedTestimonials = sortByName
-    ? [...testimonials].sort((a, b) => a.company.localeCompare(b.company))
-    : testimonials;
-
-  const toggleSort = () => {
-    const next = !sortByName;
-    setSortByName(next);
-
-    if (typeof window !== "undefined") {
-      localStorage.setItem(
-        "kotlin-testimonials-order",
-        next ? "name" : "default"
-      );
-    }
-  };
+  const { sorted, isSorted, toggleSort } = useSortToggle({
+    list : testimonials, 
+    comparator : (arg0, arg1) => arg0.company.localeCompare(arg1.company),
+    localStorageName : "kotlin-testimonials-order"
+  });
 
   return (
     <Section className="usage-section">
@@ -48,12 +30,12 @@ function UsageSectionContent() {
           style={{ display: "flex", justifyContent: "flex-end" }}
         >
           <Button mode="outline" size="s" onClick={toggleSort}>
-            Sort: {sortByName ? "A-Z" : "Default"}
+            Sort: {isSorted ? "A-Z" : "Default"}
           </Button>
         </div>
 
         <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
-          {sortedTestimonials.map((item, index) => (
+          {sorted.map((item, index) => (
             <a
               key={index}
               href={item.url}
