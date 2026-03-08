@@ -1,4 +1,7 @@
-export const tabs = [
+import type { Tab } from "./types";
+
+
+export const tabs : Tab[] = [
     {
         title: 'Concise',
         code: `data class Employee(

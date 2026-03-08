@@ -1,4 +1,6 @@
-export const newsData = [
+import type { NewData } from "./types";
+
+export const newsData : NewData[] = [
     {
         title: 'Kotlin 1.6.0 is released',
         link: 'https://blog.jetbrains.com/kotlin/2021/11/kotlin-1-6-0-is-released/',

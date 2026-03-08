@@ -4,8 +4,10 @@ import evernoteLogo from "/companies/evernote.svg";
 import courseraLogo from "/companies/coursera.svg";
 import springLogo from "/companies/spring.svg";
 import atlassianLogo from "/companies/atlassian.svg";
+import type { Testimonial } from "./types";
 
-export const testimonials = [
+
+export const testimonials : Testimonial[] = [
     {
         company: 'Gradle',
         logo: gradleLogo,

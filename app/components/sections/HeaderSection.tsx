@@ -1,20 +1,21 @@
 import React from 'react';
 import Button from '@rescui/button';
-import {useTextStyles} from '@rescui/typography';
-import {cardCn} from '@rescui/card';
+import { useTextStyles } from '@rescui/typography';
+import { cardCn } from '@rescui/card';
 import cn from "classnames";
-import {Container, Section} from "../../layouts/PromeniIme";
+import { Container, Section } from "../../layouts/PromeniIme";
 
-import {homeSectionCardsData} from '../../data/homeSectionCardsData';
+import { homeSectionCardsData} from '../../data/homeSectionCardsData';
 
 import "../../styles/sections/Header.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
 import jetbrainslogo from "/logos/jetbrains.svg"
+import type { HomeSectionCardData } from '~/data/types';
 
 export function HeaderSection() {
     const textCn = useTextStyles();
 
-    const {isMobile} = useIsMobile();
+    const { isMobile } = useIsMobile();
     const visibleCards = isMobile ? homeSectionCardsData.slice(0, 2) : homeSectionCardsData;
 
     return <div>
@@ -35,24 +36,16 @@ export function HeaderSection() {
                         <img src={jetbrainslogo} alt=""></img>
                         <p className={textCn('rs-text-2')}>
                             Developed by <a className={textCn('rs-link')}
-                                            href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a
-                            className={textCn('rs-link')}
-                            href="https://github.com/JetBrains/kotlin/graphs/contributors">Contributors</a>
+                                href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a
+                                    className={textCn('rs-link')}
+                                    href="https://github.com/JetBrains/kotlin/graphs/contributors">Contributors</a>
                         </p>
                     </div>
                 </div>
 
                 <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
                     {visibleCards.map(card => (
-                        <a key={card.id} href={card.link} className={cn(cardCn({
-                            theme: 'dark',
-                            mode: 'classic',
-                            isClickable: true
-                        }), 'kto-col-3 kto-col-md-6 kto-col-sm-12')}>
-                            <img src={card.img} alt=""></img>
-                            <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>{card.title}</h2>
-                            <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>{card.subTitle}</p>
-                        </a>
+                        <HeaderSectionCard card={card}/>
                     ))}
                 </div>
 
@@ -65,4 +58,18 @@ export function HeaderSection() {
             </Container>
         </Section>
     </div>
+}
+
+function HeaderSectionCard({card} : {card : HomeSectionCardData}) {
+    const textCn = useTextStyles();
+
+    return <a key={card.id} href={card.link} className={cn(cardCn({
+        theme: 'dark',
+        mode: 'classic',
+        isClickable: true
+    }), 'kto-col-3 kto-col-md-6 kto-col-sm-12')}>
+        <img src={card.img} alt=""></img>
+        <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>{card.title}</h2>
+        <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>{card.subTitle}</p>
+    </a>
 }
