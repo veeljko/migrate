@@ -1,0 +1,10 @@
+declare module "@rescui/ui-contexts";
+declare module "@rescui/button";
+declare module "@rescui/card";
+declare module "@rescui/checkbox";
+declare module "@rescui/icons";
+declare module "@rescui/input";
+declare module "@rescui/tab-list";
+declare module "@rescui/tooltip";
+declare module "@rescui/typography";
+declare module "@rescui/focus-manager";
