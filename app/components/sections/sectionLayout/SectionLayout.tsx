@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { ThemeProvider } from "@rescui/ui-contexts";
 import cn from "classnames";
 import type { SectionProps, ContainerProps, PageSectionProps } from "./SectionLayoutTypes";

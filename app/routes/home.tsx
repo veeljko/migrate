@@ -4,6 +4,8 @@ import { LatestFromKotlinSection } from "../components/sections/LatestFromKotlin
 import { UsageSection } from "~/components/sections/UsageSection";
 import { StartSection } from "~/components/sections/StartSection";
 import "../styles/Home.scss"
+import Footer from "~/components/Footer";
+import Header from "~/components/Header";
 
 export function meta() {
   return [
@@ -12,15 +14,15 @@ export function meta() {
   ];
 }
 
-//BUGS
-//kotlin usage highlights section's card have wrong css
 export default function Home() {
 
   return (<>
+    <Header/>
     <HeaderSection />
     <LatestFromKotlinSection />
     <WhyKotlinSection />
     <UsageSection />
     <StartSection />
+    <Footer/>
   </>)
 }

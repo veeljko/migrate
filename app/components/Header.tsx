@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GlobalHeader from "@jetbrains/kotlin-web-site-ui/out/components/header";
 import "@jetbrains/kotlin-web-site-ui/out/components/header/index.css";
 
-export default function Header(props: any) {
+export default function Header() {
   const [isClient, setIsClient] = React.useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // `GlobalHeader` reads `window` during render, so skip SSR render.
   if (!isClient) return null;
 
-  return <GlobalHeader {...props} />;
+  return <GlobalHeader searchConfig={{}} />;
 }

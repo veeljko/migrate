@@ -13,9 +13,9 @@ import {newsData} from '../../data/newsData';
 import '../../styles/sections/LatestFromKotlin.scss';
 
 
-export function LatestFromKotlinSection() {
+function LatestFromKotlinSectionContent() {
     const textCn = useTextStyles();
-    return <PageSection className="latest-from-kotlin-section">
+    return <>
         <h2 className={textCn('rs-h1')}>Latest from Kotlin</h2>
 
         <div className="kto-offset-top-32">
@@ -65,5 +65,11 @@ export function LatestFromKotlinSection() {
                 Kotlin blog
             </Button>
         </div>
+    </>
+}
+
+export function LatestFromKotlinSection() {
+    return <PageSection className="latest-from-kotlin-section" theme="dark">
+        <LatestFromKotlinSectionContent />
     </PageSection>
 }
