@@ -9,8 +9,6 @@ export function useHighlight() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [highlighted, setHighlighted] = useState("");
 
-
-
     useEffect(() => {
         setActiveIndex(Math.floor(Math.random() * tabs.length));
     }, []);

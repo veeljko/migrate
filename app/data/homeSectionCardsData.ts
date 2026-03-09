@@ -2,7 +2,7 @@ import serverSideImg from "/good-for/server-side.svg"
 import mobileImg from "/good-for/mobile.svg"
 import androidImg from "/good-for/android.svg"
 import webImg from "/good-for/web.svg"
-import type { HomeSectionCardData } from "./types"
+import type { HomeSectionCardData } from "./dataTypes"
 
 
 export const homeSectionCardsData : HomeSectionCardData[] = [

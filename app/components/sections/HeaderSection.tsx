@@ -3,14 +3,14 @@ import Button from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { cardCn } from '@rescui/card';
 import cn from "classnames";
-import { Container, Section } from "../../layouts/PromeniIme";
+import { PageSection } from "./sectionLayout/SectionLayout";
 
 import { homeSectionCardsData} from '../../data/homeSectionCardsData';
 
 import "../../styles/sections/Header.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
 import jetbrainslogo from "/logos/jetbrains.svg"
-import type { HomeSectionCardData } from '~/data/types';
+import type { HomeSectionCardData } from '~/data/dataTypes';
 
 export function HeaderSection() {
     const textCn = useTextStyles();
@@ -18,46 +18,42 @@ export function HeaderSection() {
     const { isMobile } = useIsMobile();
     const visibleCards = isMobile ? homeSectionCardsData.slice(0, 2) : homeSectionCardsData;
 
-    return <div>
-        <Section className="header-section">
-            <Container>
-                <h1 className={textCn('rs-hero')}>A modern programming language that makes developers happier</h1>
-                <div className="header-section__actions">
-                    <div>
-                        <Button size="l" href="#">
-                            Get started
-                        </Button>
-                        <Button mode="outline" size="l" href="#" className="header-section__why-btn">
-                            Why Kotlin
-                        </Button>
-                    </div>
+    return <PageSection className="header-section">
+        <h1 className={textCn('rs-hero')}>A modern programming language that makes developers happier</h1>
+        <div className="header-section__actions">
+            <div>
+                <Button size="l" href="#">
+                    Get started
+                </Button>
+                <Button mode="outline" size="l" href="#" className="header-section__why-btn">
+                    Why Kotlin
+                </Button>
+            </div>
 
-                    <div className="header-section__contributors">
-                        <img src={jetbrainslogo} alt=""></img>
-                        <p className={textCn('rs-text-2')}>
-                            Developed by <a className={textCn('rs-link')}
-                                href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a
-                                    className={textCn('rs-link')}
-                                    href="https://github.com/JetBrains/kotlin/graphs/contributors">Contributors</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
-                    {visibleCards.map(card => (
-                        <HeaderSectionCard card={card} key={card.id}/>
-                    ))}
-                </div>
-
-                <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>
-                    <a className={textCn('rs-link')} href="/docs/multiplatform.html">Multiplatform for Other
-                        Platforms</a>
-                    {', '}
-                    <a className={textCn('rs-link')} href="/docs/data-science-overview.html">Data Science</a>
+            <div className="header-section__contributors">
+                <img src={jetbrainslogo} alt=""></img>
+                <p className={textCn('rs-text-2')}>
+                    Developed by <a className={textCn('rs-link')}
+                        href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a
+                            className={textCn('rs-link')}
+                            href="https://github.com/JetBrains/kotlin/graphs/contributors">Contributors</a>
                 </p>
-            </Container>
-        </Section>
-    </div>
+            </div>
+        </div>
+
+        <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
+            {visibleCards.map(card => (
+                <HeaderSectionCard card={card} key={card.id}/>
+            ))}
+        </div>
+
+        <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>
+            <a className={textCn('rs-link')} href="/docs/multiplatform.html">Multiplatform for Other
+                Platforms</a>
+            {', '}
+            <a className={textCn('rs-link')} href="/docs/data-science-overview.html">Data Science</a>
+        </p>
+    </PageSection>
 }
 
 function HeaderSectionCard({card} : {card : HomeSectionCardData}) {

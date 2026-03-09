@@ -4,7 +4,7 @@ import evernoteLogo from "/companies/evernote.svg";
 import courseraLogo from "/companies/coursera.svg";
 import springLogo from "/companies/spring.svg";
 import atlassianLogo from "/companies/atlassian.svg";
-import type { Testimonial } from "./types";
+import type { Testimonial } from "./dataTypes";
 
 
 export const testimonials : Testimonial[] = [
