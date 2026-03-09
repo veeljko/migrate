@@ -16,8 +16,6 @@ import gridCss from "./styles/grid.scss?url";
 import stylesV2Css from "./styles/styles-v2.scss?url";
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
   { rel: "stylesheet", href: jbSansCss },
   { rel: "stylesheet", href: highlightCss },
   { rel: "stylesheet", href: headerCss },

@@ -9,7 +9,7 @@ import {PageSection} from "./sectionLayout/SectionLayout";
 import multiplatformImg from "/index/multiplatform.svg";
 
 import {ProgrammingLanguage} from '../ProgrammingLanguage';
-import { sections } from '~/data/whyKotlinSectionData';
+import { sections } from '../../data/whyKotlinSectionData';
 import "../../styles/sections/WhyKotlin.scss"
 
 

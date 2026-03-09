@@ -10,7 +10,7 @@ import { homeSectionCardsData} from '../../data/homeSectionCardsData';
 import "../../styles/sections/Header.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
 import jetbrainslogo from "/logos/jetbrains.svg"
-import type { HomeSectionCardData } from '~/data/dataTypes';
+import type { HomeSectionCardData } from '../../data/dataTypes';
 
 function HeaderSectionCard({card} : {card : HomeSectionCardData}) {
     const textCn = useTextStyles();

@@ -7,8 +7,8 @@ import { PageSection } from "./sectionLayout/SectionLayout";
 import { testimonials } from "../../data/testimonials";
 
 import "../../styles/sections/Usage.scss";
-import { useSortToggle } from "~/hooks/useSortToggle";
-import type { Testimonial } from "~/data/dataTypes";
+import { useSortToggle } from "../../hooks/useSortToggle";
+import type { Testimonial } from "../../data/dataTypes";
 
 interface UsageSectionCardProps {
   item : Testimonial;
