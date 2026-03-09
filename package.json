@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@jetbrains/babel-preset-jetbrains": "^2.4.0",
-    "@jetbrains/kotlin-web-site-ui": "^4.14.4",
+    "@jetbrains/kotlin-web-site-ui": "^4.0.0",
     "@react-hook/resize-observer": "^2.0.2",
     "@react-router/dev": "^7.13.1",
     "@react-router/node": "^7.13.1",

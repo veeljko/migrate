@@ -14,8 +14,25 @@ import headerCss from "@jetbrains/kotlin-web-site-ui/out/components/header/index
 import footerCss from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css?url";
 import gridCss from "./styles/grid.scss?url";
 import stylesV2Css from "./styles/styles-v2.scss?url";
+import jbMonoRegular from "../assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2?url";
+import jbMonoBold from "../assets/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2?url";
+import jbMonoItalic from "../assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2?url";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "dns-prefetch", href: "//fonts.googleapis.com" },
+  { rel: "dns-prefetch", href: "//fonts.gstatic.com" },
+  { rel: "dns-prefetch", href: "//resources.jetbrains.com" },
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+  { rel: "preload", href: jbMonoRegular, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+  { rel: "preload", href: jbMonoBold, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+  { rel: "preload", href: jbMonoItalic, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+  { rel: "icon", type: "image/svg+xml", href: "/images/favicon.svg" },
+  { rel: "alternate icon", href: "/images/favicon.ico" },
+  { rel: "apple-touch-icon", href: "/images/apple-touch-icon.png" },
+  { rel: "apple-touch-icon", sizes: "72x72", href: "/images/apple-touch-icon-72x72.png" },
+  { rel: "apple-touch-icon", sizes: "114x114", href: "/images/apple-touch-icon-114x114.png" },
+  { rel: "apple-touch-icon", sizes: "144x144", href: "/images/apple-touch-icon-144x144.png" },
   { rel: "stylesheet", href: jbSansCss },
   { rel: "stylesheet", href: highlightCss },
   { rel: "stylesheet", href: headerCss },
@@ -30,6 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <Meta />
         <Links />
       </head>

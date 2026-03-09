@@ -8,9 +8,23 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export function meta() {
+  const title = "Kotlin Programming Language";
+  const description = "Kotlin homepage";
+
   return [
-    { title: "Kotlin Programming Language" },
-    { name: "description", content: "Kotlin homepage" },
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://kotlinlang.org/" },
+    { property: "og:image", content: "https://kotlinlang.org/images/open-graph/general.png" },
+    { property: "og:description", content: description },
+    { property: "og:site_name", content: "Kotlin" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:site", content: "@kotlin" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image:src", content: "https://kotlinlang.org/images/twitter/general.png" },
   ];
 }
 
