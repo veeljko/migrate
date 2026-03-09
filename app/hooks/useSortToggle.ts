@@ -8,6 +8,9 @@ interface UseSortToggleProps<T> {
 
 export function useSortToggle<T>({ list, comparator, localStorageName }: UseSortToggleProps<T>) {
     const [isSorted, setIsSorted] = useState(false);
+    const sorted = isSorted
+        ? [...list].sort((a, b) => comparator(a, b))
+        : list;
 
     useEffect(() => {
         if (localStorageName) {
@@ -17,10 +20,6 @@ export function useSortToggle<T>({ list, comparator, localStorageName }: UseSort
             }
         }
     }, []);
-
-    const sorted = isSorted
-        ? [...list].sort((a, b) => comparator(a, b))
-        : list;
 
     const toggleSort = () => {
         const next = !isSorted;
