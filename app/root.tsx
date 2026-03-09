@@ -8,14 +8,22 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "@rescui/typography/lib/font-jb-sans-auto.css";
-import "highlight.js/styles/github.css";
-import "./styles/grid.scss";
-import "./styles/styles-v2.scss";
+import jbSansCss from "@rescui/typography/lib/font-jb-sans-auto.css?url";
+import highlightCss from "highlight.js/styles/github.css?url";
+import headerCss from "@jetbrains/kotlin-web-site-ui/out/components/header/index.css?url";
+import footerCss from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css?url";
+import gridCss from "./styles/grid.scss?url";
+import stylesV2Css from "./styles/styles-v2.scss?url";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+  { rel: "stylesheet", href: jbSansCss },
+  { rel: "stylesheet", href: highlightCss },
+  { rel: "stylesheet", href: headerCss },
+  { rel: "stylesheet", href: footerCss },
+  { rel: "stylesheet", href: gridCss },
+  { rel: "stylesheet", href: stylesV2Css },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

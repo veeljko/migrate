@@ -4,8 +4,8 @@ import { LatestFromKotlinSection } from "../components/sections/LatestFromKotlin
 import { UsageSection } from "../components/sections/UsageSection";
 import { StartSection } from "../components/sections/StartSection";
 import "../styles/Home.scss"
-import Footer from "~/components/Footer";
-import Header from "~/components/Header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export function meta() {
   return [
