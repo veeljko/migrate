@@ -1,26 +1,26 @@
-import { useState, useEffect } from "react";
-import { tabs } from "../data/programmingLanguageData";
-import hljs from "highlight.js/lib/core"
-import kotlin from "highlight.js/lib/languages/kotlin"
+import { useEffect, useMemo, useState } from "react";
+import hljs from "highlight.js/lib/core";
+import kotlin from "highlight.js/lib/languages/kotlin";
 
+import type { Tab } from "../data/dataTypes";
 
-export function useHighlight() {
+if (!hljs.getLanguage("kotlin")) {
     hljs.registerLanguage("kotlin", kotlin);
+}
+
+export function useHighlight(tabs: Tab[]) {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const result = hljs.highlight(tabs[activeIndex].code, {
-        language: "kotlin",
-    });
-    
-    const [highlighted, setHighlighted] = useState(result.value);
-
     useEffect(() => {
-        const result = hljs.highlight(tabs[activeIndex].code, {
-            language: "kotlin",
-        });
+        if (tabs.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * tabs.length);
+        setActiveIndex(randomIndex);
+    }, [tabs.length]);
 
-        setHighlighted(result.value);
-    }, [activeIndex]);
+    const highlighted = useMemo(() => {
+        const code = tabs[activeIndex]?.code ?? "";
+        return hljs.highlight(code, { language: "kotlin" }).value;
+    }, [tabs, activeIndex]);
 
     return { highlighted, activeIndex, setActiveIndex };
 }

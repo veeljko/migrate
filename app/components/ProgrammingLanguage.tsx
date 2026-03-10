@@ -12,7 +12,7 @@ import type {Tab as TabProp} from "../data/dataTypes";
 
 export function ProgrammingLanguage({tabs} : {tabs : TabProp[]}) {
   const textCn = useTextStyles();
-  const { highlighted, activeIndex, setActiveIndex } = useHighlight();
+  const { highlighted, activeIndex, setActiveIndex } = useHighlight(tabs);
 
   return (
     <div className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
