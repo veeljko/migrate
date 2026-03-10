@@ -4,13 +4,13 @@ import { useTextStyles } from "@rescui/typography";
 import { TabList, Tab, TabSeparator } from "@rescui/tab-list";
 import cn from "classnames";
 
-import { tabs } from "../data/programmingLanguageData";
-
 import "../styles/ProgrammingLanguage.scss";
 import { useHighlight } from "../hooks/useHighlight";
 
+import type {Tab as TabProp} from "../data/dataTypes";
 
-export function ProgrammingLanguage() {
+
+export function ProgrammingLanguage({tabs} : {tabs : TabProp[]}) {
   const textCn = useTextStyles();
   const { highlighted, activeIndex, setActiveIndex } = useHighlight();
 

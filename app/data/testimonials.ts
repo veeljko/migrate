@@ -45,3 +45,7 @@ export const testimonials : Testimonial[] = [
         text: 'All new code in the Trello Android app is in Kotlin',
     },
 ];
+
+export async function getTestimonials() {
+    return testimonials;
+}

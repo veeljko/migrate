@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@rescui/button';
 import {useTextStyles} from '@rescui/typography';
 
@@ -9,9 +8,9 @@ import {PageSection} from "./sectionLayout/SectionLayout";
 import multiplatformImg from "/index/multiplatform.svg";
 
 import {ProgrammingLanguage} from '../ProgrammingLanguage';
-import { sections } from '../../data/whyKotlinSectionData';
 import "../../styles/sections/WhyKotlin.scss"
-
+import { sections } from '../../data/whyKotlinSectionData';
+import type { Tab } from '../../data/dataTypes';
 
 function YouTubeEmbed({id} : {id : string | undefined}) {
     return (
@@ -28,13 +27,13 @@ function YouTubeEmbed({id} : {id : string | undefined}) {
     );
 }
 
-function WhyKotlinContent() {
+function WhyKotlinContent({tabs} : {tabs : Tab[]}) {
     const textCn = useTextStyles();
     return (
         <>
             <h2 className={textCn('rs-hero')}>Why Kotlin</h2>
 
-            <ProgrammingLanguage/>
+            <ProgrammingLanguage tabs={tabs}/>
 
             {sections.map((section, index) => (
                 <div key={index} className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
@@ -72,10 +71,10 @@ function WhyKotlinContent() {
     );
 }
 
-export function WhyKotlinSection() {
+export function WhyKotlinSection({tabs} : {tabs : Tab[]}) {
     return (
         <PageSection className="why-kotlin-section" theme="light">
-            <WhyKotlinContent/>
+            <WhyKotlinContent tabs={tabs} />
         </PageSection>
     );
 }

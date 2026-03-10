@@ -120,3 +120,8 @@ interface PlatformSocketListener {
 }`,
     },
 ];
+
+
+export async function getTabs() {
+    return tabs;
+}

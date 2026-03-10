@@ -7,11 +7,12 @@ import kotlin from "highlight.js/lib/languages/kotlin"
 export function useHighlight() {
     hljs.registerLanguage("kotlin", kotlin);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [highlighted, setHighlighted] = useState("");
 
-    useEffect(() => {
-        setActiveIndex(Math.floor(Math.random() * tabs.length));
-    }, []);
+    const result = hljs.highlight(tabs[activeIndex].code, {
+        language: "kotlin",
+    });
+    
+    const [highlighted, setHighlighted] = useState(result.value);
 
     useEffect(() => {
         const result = hljs.highlight(tabs[activeIndex].code, {

@@ -5,7 +5,7 @@ import { cardCn } from '@rescui/card';
 import cn from "classnames";
 import { PageSection } from "./sectionLayout/SectionLayout";
 
-import { homeSectionCardsData} from '../../data/homeSectionCardsData';
+// import { homeSectionCardsData} from '../../data/homeSectionCardsData';
 
 import "../../styles/sections/Header.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
@@ -26,7 +26,7 @@ function HeaderSectionCard({card} : {card : HomeSectionCardData}) {
     </a>
 }
 
-function HeaderSectionContent() {
+function HeaderSectionContent({homeSectionCardsData} : {homeSectionCardsData : HomeSectionCardData[]}) {
     const textCn = useTextStyles();
 
     const { isMobile } = useIsMobile();
@@ -70,9 +70,9 @@ function HeaderSectionContent() {
     </>
 }
 
-export function HeaderSection() {
+export function HeaderSection({homeSectionCardsData} : {homeSectionCardsData : HomeSectionCardData[]}) {
     return <PageSection className="header-section" theme="dark">
-        <HeaderSectionContent />
+        <HeaderSectionContent homeSectionCardsData={homeSectionCardsData} />
     </PageSection>
 }
 

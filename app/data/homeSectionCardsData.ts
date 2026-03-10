@@ -35,3 +35,7 @@ export const homeSectionCardsData : HomeSectionCardData[] = [
         img: androidImg
     },
 ]
+
+export async function getHomeSectionCardsData() {
+    return homeSectionCardsData;
+}

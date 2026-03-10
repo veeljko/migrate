@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface NewData {
     title: string,
     tag: string
@@ -22,4 +24,13 @@ export interface Testimonial{
     logo : string,
     url : string,
     text : string
+}
+
+export interface WhyKotlinSectionData {
+    title: ReactNode | string;
+    description: ReactNode;
+    buttonText: string;
+    buttonLink: string;
+    media: "youtube" | "image";
+    youtubeId?: string;
 }

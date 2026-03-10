@@ -4,7 +4,6 @@ import { cardCn } from "@rescui/card";
 import cn from "classnames";
 
 import { PageSection } from "./sectionLayout/SectionLayout";
-import { testimonials } from "../../data/testimonials";
 
 import "../../styles/sections/Usage.scss";
 import { useSortToggle } from "../../hooks/useSortToggle";
@@ -45,7 +44,7 @@ function UsageSectionCard({ item }: UsageSectionCardProps) {
 }
 
 
-function UsageSectionContent() {
+function UsageSectionContent({ testimonials }: { testimonials: Testimonial[] }) {
   const textCn = useTextStyles();
 
   const { sorted, isSorted, toggleSort } = useSortToggle({
@@ -76,10 +75,10 @@ function UsageSectionContent() {
   );
 }
 
-export function UsageSection() {
+export function UsageSection({testimonials} : {testimonials : Testimonial[]}) {
   return (
     <PageSection className="usage-section" theme="light">
-      <UsageSectionContent />
+      <UsageSectionContent testimonials={testimonials} />
     </PageSection>
   );
 }

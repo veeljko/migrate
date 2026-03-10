@@ -8,12 +8,14 @@ import {PageSection} from "./sectionLayout/SectionLayout";
 import bannerImg from "/index/banners/kotlin-1.6.20.png";
 import bannerMobileImg from "/index/banners/kotlin-1.6.20-mobile.png";
 
-import {newsData} from '../../data/newsData';
-
 import '../../styles/sections/LatestFromKotlin.scss';
+import type { NewData } from '../../data/dataTypes';
 
+interface LatestFromKotlinSectionProps {
+    newsData: NewData[];
+}
 
-function LatestFromKotlinSectionContent() {
+function LatestFromKotlinSectionContent({newsData} : LatestFromKotlinSectionProps) {
     const textCn = useTextStyles();
     return <>
         <h2 className={textCn('rs-h1')}>Latest from Kotlin</h2>
@@ -68,8 +70,8 @@ function LatestFromKotlinSectionContent() {
     </>
 }
 
-export function LatestFromKotlinSection() {
+export function LatestFromKotlinSection({newsData} : LatestFromKotlinSectionProps) {
     return <PageSection className="latest-from-kotlin-section" theme="dark">
-        <LatestFromKotlinSectionContent />
+        <LatestFromKotlinSectionContent newsData={newsData}/>
     </PageSection>
 }

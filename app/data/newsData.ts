@@ -22,3 +22,7 @@ export const newsData : NewData[] = [
         tag: 'blog.jetbrains.com',
     },
 ];
+
+export async function getNewsData() {
+    return newsData;
+}

@@ -1,4 +1,6 @@
-export const sections = [
+import type { WhyKotlinSectionData } from "./dataTypes";
+
+export const sections: WhyKotlinSectionData[] = [
     {
         title: <>A productive way to write server&#8209;side applications</>,
         description: 'Compatible with the Java ecosystem. Use your favorite JVM frameworks and libraries.',
@@ -33,3 +35,7 @@ export const sections = [
         youtubeId: 'JGvk4M0Rfxo',
     },
 ];
+
+export async function getSections() {
+    return sections;
+}
