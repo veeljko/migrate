@@ -15,6 +15,12 @@ interface LatestFromKotlinSectionProps {
     newsData: NewData[];
 }
 
+export function LatestFromKotlinSection({newsData} : LatestFromKotlinSectionProps) {
+    return <PageSection className="latest-from-kotlin-section" theme="dark">
+        <LatestFromKotlinSectionContent newsData={newsData}/>
+    </PageSection>
+}
+
 function LatestFromKotlinSectionContent({newsData} : LatestFromKotlinSectionProps) {
     const textCn = useTextStyles();
     return <>
@@ -70,8 +76,3 @@ function LatestFromKotlinSectionContent({newsData} : LatestFromKotlinSectionProp
     </>
 }
 
-export function LatestFromKotlinSection({newsData} : LatestFromKotlinSectionProps) {
-    return <PageSection className="latest-from-kotlin-section" theme="dark">
-        <LatestFromKotlinSectionContent newsData={newsData}/>
-    </PageSection>
-}

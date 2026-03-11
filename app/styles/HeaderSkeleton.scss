@@ -12,20 +12,21 @@
 .header-skeleton__logo-wrap {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  min-width: 180px;
+  gap: 2px;
+  flex-grow: 1;
+  min-height: 24px;
 }
 
 .header-skeleton__logo {
-  width: 100px;
-  height: 24px;
-  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 0px;
 }
 
 .header-skeleton__version {
   width: 54px;
   height: 16px;
-  margin-top: 2px;
+  margin-top: 0;
   border-radius: 999px;
 }
 
@@ -68,7 +69,7 @@
 @media (max-width: 960px) {
   .header-skeleton {
     height: 52px;
-    padding: 0 16px;
+    padding: 0 0 0 16px;
   }
 
   .header-skeleton__nav {

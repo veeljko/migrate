@@ -122,6 +122,6 @@ interface PlatformSocketListener {
 ];
 
 
-export async function getTabs() {
+export function getTabs() {
     return tabs;
 }

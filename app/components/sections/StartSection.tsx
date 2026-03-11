@@ -6,6 +6,14 @@ import {PageSection} from "./sectionLayout/SectionLayout";
 
 import "../../styles/sections/Start.scss";
 
+export function StartSection() {
+    return (
+        <PageSection className="start-section" theme="dark">
+            <StartSectionContent/>
+        </PageSection>
+    );
+}
+
 function StartSectionContent() {
     const textCn = useTextStyles();
     return (
@@ -23,13 +31,5 @@ function StartSectionContent() {
                 </Button>
             </div>
         </>
-    );
-}
-
-export function StartSection() {
-    return (
-        <PageSection className="start-section" theme="dark">
-            <StartSectionContent/>
-        </PageSection>
     );
 }

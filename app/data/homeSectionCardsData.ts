@@ -36,6 +36,6 @@ export const homeSectionCardsData : HomeSectionCardData[] = [
     },
 ]
 
-export async function getHomeSectionCardsData() {
+export function getHomeSectionCardsData() {
     return homeSectionCardsData;
 }

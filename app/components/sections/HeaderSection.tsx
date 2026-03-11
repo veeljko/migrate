@@ -1,29 +1,18 @@
-import React from 'react';
 import Button from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { cardCn } from '@rescui/card';
 import cn from "classnames";
 import { PageSection } from "./sectionLayout/SectionLayout";
 
-// import { homeSectionCardsData} from '../../data/homeSectionCardsData';
-
 import "../../styles/sections/Header.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
 import jetbrainslogo from "/logos/jetbrains.svg"
 import type { HomeSectionCardData } from '../../data/dataTypes';
 
-function HeaderSectionCard({card} : {card : HomeSectionCardData}) {
-    const textCn = useTextStyles();
-
-    return <a key={card.id} href={card.link} className={cn(cardCn({
-        theme: 'dark',
-        mode: 'classic',
-        isClickable: true
-    }), 'kto-col-3 kto-col-md-6 kto-col-sm-12')}>
-        <img src={card.img} alt=""></img>
-        <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>{card.title}</h2>
-        <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>{card.subTitle}</p>
-    </a>
+export function HeaderSection({homeSectionCardsData} : {homeSectionCardsData : HomeSectionCardData[]}) {
+    return <PageSection className="header-section" theme="dark">
+        <HeaderSectionContent homeSectionCardsData={homeSectionCardsData} />
+    </PageSection>
 }
 
 function HeaderSectionContent({homeSectionCardsData} : {homeSectionCardsData : HomeSectionCardData[]}) {
@@ -70,9 +59,17 @@ function HeaderSectionContent({homeSectionCardsData} : {homeSectionCardsData : H
     </>
 }
 
-export function HeaderSection({homeSectionCardsData} : {homeSectionCardsData : HomeSectionCardData[]}) {
-    return <PageSection className="header-section" theme="dark">
-        <HeaderSectionContent homeSectionCardsData={homeSectionCardsData} />
-    </PageSection>
+function HeaderSectionCard({card} : {card : HomeSectionCardData}) {
+    const textCn = useTextStyles();
+
+    return <a key={card.id} href={card.link} className={cn(cardCn({
+        theme: 'dark',
+        mode: 'classic',
+        isClickable: true
+    }), 'kto-col-3 kto-col-md-6 kto-col-sm-12')}>
+        <img src={card.img} alt=""></img>
+        <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>{card.title}</h2>
+        <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>{card.subTitle}</p>
+    </a>        
 }
 

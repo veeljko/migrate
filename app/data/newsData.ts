@@ -23,6 +23,6 @@ export const newsData : NewData[] = [
     },
 ];
 
-export async function getNewsData() {
+export function getNewsData() {
     return newsData;
 }

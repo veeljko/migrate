@@ -1,10 +1,11 @@
 import "../../../styles/HeaderSkeleton.scss";
+import kotlinLogo from "/images/favicon.svg";
 
 export default function HeaderSkeleton() {
   return (
     <header className="header-skeleton" aria-hidden="true">
       <div className="header-skeleton__logo-wrap">
-        <div className="header-skeleton__logo sk" />
+        <img className="header-skeleton__logo" src={kotlinLogo} alt="Kotlin Logo" />
         <div className="header-skeleton__version sk" />
       </div>
 
@@ -16,7 +17,6 @@ export default function HeaderSkeleton() {
         <div className="header-skeleton__item sk" />
       </nav>
 
-      <div className="header-skeleton__search sk" />
     </header>
   );
 }

@@ -4,9 +4,7 @@ import kotlin from "highlight.js/lib/languages/kotlin";
 
 import type { Tab } from "../data/dataTypes";
 
-if (!hljs.getLanguage("kotlin")) {
-    hljs.registerLanguage("kotlin", kotlin);
-}
+hljs.registerLanguage("kotlin", kotlin);
 
 export function useHighlight(tabs: Tab[]) {
     const [activeIndex, setActiveIndex] = useState(0);

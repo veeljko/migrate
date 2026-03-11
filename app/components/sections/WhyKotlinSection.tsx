@@ -12,18 +12,11 @@ import "../../styles/sections/WhyKotlin.scss"
 import { sections } from '../../data/whyKotlinSectionData';
 import type { Tab } from '../../data/dataTypes';
 
-function YouTubeEmbed({id} : {id : string | undefined}) {
+export function WhyKotlinSection({tabs} : {tabs : Tab[]}) {
     return (
-        <div className="why-kotlin-section__youtube">
-            <iframe
-                width="560"
-                height="315"
-                frameBorder="0"
-                allowFullScreen
-                src={`https://www.youtube-nocookie.com/embed/${id}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-        </div>
+        <PageSection className="why-kotlin-section" theme="light">
+            <WhyKotlinContent tabs={tabs} />
+        </PageSection>
     );
 }
 
@@ -47,7 +40,7 @@ function WhyKotlinContent({tabs} : {tabs : Tab[]}) {
                                 mode="outline"
                                 size="l"
                                 href={section.buttonLink}
-                            >
+                                >
                                 {section.buttonText}
                             </Button>
                         </div>
@@ -59,9 +52,9 @@ function WhyKotlinContent({tabs} : {tabs : Tab[]}) {
                         )}
                         {section.media === 'image' && (
                             <img
-                                src={multiplatformImg}
-                                alt="Kotlin Multiplatform"
-                                className="why-kotlin-section__image"
+                            src={multiplatformImg}
+                            alt="Kotlin Multiplatform"
+                            className="why-kotlin-section__image"
                             />
                         )}
                     </div>
@@ -71,10 +64,17 @@ function WhyKotlinContent({tabs} : {tabs : Tab[]}) {
     );
 }
 
-export function WhyKotlinSection({tabs} : {tabs : Tab[]}) {
+function YouTubeEmbed({id} : {id : string | undefined}) {
     return (
-        <PageSection className="why-kotlin-section" theme="light">
-            <WhyKotlinContent tabs={tabs} />
-        </PageSection>
+        <div className="why-kotlin-section__youtube">
+            <iframe
+                width="560"
+                height="315"
+                frameBorder="0"
+                allowFullScreen
+                src={`https://www.youtube-nocookie.com/embed/${id}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                />
+        </div>
     );
 }

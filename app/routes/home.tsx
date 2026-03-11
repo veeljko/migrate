@@ -46,12 +46,12 @@ export async function loader() {
     testimonials,
     newsData,
     programmingLanguageData,
-  ] = await Promise.all([
+  ] = [
     homeSectionCardsModule.getHomeSectionCardsData(),
     testimonialsModule.getTestimonials(),
     newsModule.getNewsData(),
     programmingLanguageModule.getTabs(),
-  ]);
+  ];
 
   return {
     homeSectionCardsData,

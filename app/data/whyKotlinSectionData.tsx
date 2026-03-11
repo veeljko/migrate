@@ -35,7 +35,3 @@ export const sections: WhyKotlinSectionData[] = [
         youtubeId: 'JGvk4M0Rfxo',
     },
 ];
-
-export async function getSections() {
-    return sections;
-}

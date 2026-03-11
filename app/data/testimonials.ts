@@ -46,6 +46,6 @@ export const testimonials : Testimonial[] = [
     },
 ];
 
-export async function getTestimonials() {
+export function getTestimonials() {
     return testimonials;
 }

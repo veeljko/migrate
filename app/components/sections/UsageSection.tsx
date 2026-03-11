@@ -13,36 +13,13 @@ interface UsageSectionCardProps {
   item : Testimonial;
 }
 
-function UsageSectionCard({ item }: UsageSectionCardProps) {
-  const textCn = useTextStyles();
-  return <a
-    href={item.url}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={cn(
-      cardCn({
-        theme: "light",
-        mode: "classic",
-        isClickable: true,
-      }),
-      "usage-section__card",
-      "kto-col-4 kto-col-md-6 kto-col-sm-12"
-    )}
-  >
-    <img
-      src={item.logo}
-      alt={item.company}
-      className={cn("usage-section__logo", {
-        usage_section__logo_spring: item.company === "Spring",
-      })}
-    />
-
-    <p className={cn(textCn("rs-text-2"), "kto-offset-top-8")}>
-      {item.text}
-    </p>
-  </a>
+export function UsageSection({testimonials} : {testimonials : Testimonial[]}) {
+  return (
+    <PageSection className="usage-section" theme="light">
+      <UsageSectionContent testimonials={testimonials} />
+    </PageSection>
+  );
 }
-
 
 function UsageSectionContent({ testimonials }: { testimonials: Testimonial[] }) {
   const textCn = useTextStyles();
@@ -75,10 +52,35 @@ function UsageSectionContent({ testimonials }: { testimonials: Testimonial[] }) 
   );
 }
 
-export function UsageSection({testimonials} : {testimonials : Testimonial[]}) {
-  return (
-    <PageSection className="usage-section" theme="light">
-      <UsageSectionContent testimonials={testimonials} />
-    </PageSection>
-  );
+
+function UsageSectionCard({ item }: UsageSectionCardProps) {
+  const textCn = useTextStyles();
+  return <a
+    href={item.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={cn(
+      cardCn({
+        theme: "light",
+        mode: "classic",
+        isClickable: true,
+      }),
+      "usage-section__card",
+      "kto-col-4 kto-col-md-6 kto-col-sm-12"
+    )}
+  >
+    <img
+      src={item.logo}
+      alt={item.company}
+      className={cn("usage-section__logo", {
+        usage_section__logo_spring: item.company === "Spring",
+      })}
+    />
+
+    <p className={cn(textCn("rs-text-2"), "kto-offset-top-8")}>
+      {item.text}
+    </p>
+  </a>
 }
+
+
