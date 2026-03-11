@@ -7,10 +7,10 @@ import cn from "classnames";
 import "../styles/ProgrammingLanguage.scss";
 import { useHighlight } from "../hooks/useHighlight";
 
-import type {Tab as TabProp} from "../data/dataTypes";
+import type { Tab as TabProp } from "../data/dataTypes";
 
 
-export function ProgrammingLanguage({tabs} : {tabs : TabProp[]}) {
+export function ProgrammingLanguage({ tabs }: { tabs: TabProp[] }) {
   const textCn = useTextStyles();
   const { highlighted, activeIndex, setActiveIndex } = useHighlight(tabs);
 

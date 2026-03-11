@@ -7,5 +7,5 @@ export function useIsMobile() {
     setIsMobile(window.innerWidth < 768);
   }, []);
 
-  return {isMobile};
+  return { isMobile };
 }

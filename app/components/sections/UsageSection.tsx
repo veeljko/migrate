@@ -10,10 +10,10 @@ import { useSortToggle } from "../../hooks/useSortToggle";
 import type { Testimonial } from "../../data/dataTypes";
 
 interface UsageSectionCardProps {
-  item : Testimonial;
+  item: Testimonial;
 }
 
-export function UsageSection({testimonials} : {testimonials : Testimonial[]}) {
+export function UsageSection({ testimonials }: { testimonials: Testimonial[] }) {
   return (
     <PageSection className="usage-section" theme="light">
       <UsageSectionContent testimonials={testimonials} />

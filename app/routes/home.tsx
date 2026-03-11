@@ -47,11 +47,11 @@ export async function loader() {
     newsData,
     programmingLanguageData,
   ] = [
-    homeSectionCardsModule.getHomeSectionCardsData(),
-    testimonialsModule.getTestimonials(),
-    newsModule.getNewsData(),
-    programmingLanguageModule.getTabs(),
-  ];
+      homeSectionCardsModule.getHomeSectionCardsData(),
+      testimonialsModule.getTestimonials(),
+      newsModule.getNewsData(),
+      programmingLanguageModule.getTabs(),
+    ];
 
   return {
     homeSectionCardsData,
@@ -63,14 +63,14 @@ export async function loader() {
 
 export default function Home() {
   const { homeSectionCardsData,
-        newsData,
-        testimonials,
-        programmingLanguageData : tabs }
-         = useLoaderData<typeof loader>();
+    newsData,
+    testimonials,
+    programmingLanguageData: tabs }
+    = useLoaderData<typeof loader>();
 
   return (<>
-    <HeaderSection homeSectionCardsData={homeSectionCardsData}/>
-    <LatestFromKotlinSection newsData={newsData}/>
+    <HeaderSection homeSectionCardsData={homeSectionCardsData} />
+    <LatestFromKotlinSection newsData={newsData} />
     <WhyKotlinSection tabs={tabs} />
     <UsageSection testimonials={testimonials} />
     <StartSection />
